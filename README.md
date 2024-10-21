@@ -95,11 +95,25 @@ Aula  marcada como concluída.
 
  🔹 Execute o script:
   ```bash
-├── Gemfile             # Lista de dependências do Ruby
-├── Gemfile.lock        # Arquivo gerado pelo Bundler para controle de dependências
-├── marcar_aulas.rb     # Script principal de automação
-├── cookies.json        # Arquivo JSON contendo os cookies da sessão autenticada
-└── README.md           # Este arquivo README
+automacao_aulas/
+│
+├── Gemfile
+├── Gemfile.lock
+├── app.rb               # Arquivo principal da aplicação Sinatra
+├── config.ru            # Configuração para o Rack (para deploy)
+├── cookies.json         # Arquivo com os cookies de autenticação
+├── views/               # Pasta para armazenar as views (templates ERB)
+│   ├── index.erb        # Página inicial
+│   ├── progresso.erb    # Página de progresso da automação
+├── public/              # Pasta para arquivos públicos (CSS, JS, imagens, etc.)
+│   ├── css/
+│   │   └── style.css    # CSS customizado para estilizar as páginas
+│   ├── images/
+│   │   └── icon.png     # Ícone e imagens para o projeto
+│   └── js/
+│       └── app.js       # Scripts JavaScript customizados (opcional)
+└── README.md            # Instruções do projeto
+          # Este arquivo README
 
 ```
 <br>
