@@ -70,7 +70,10 @@ https://comunidade.onebitcode.com/c/curso-base-do-js/sections
 
 ### Video Demonstrativo
 
-https://github.com/user-attachments/assets/8314c0a1-8cf4-4f4a-a342-867ce0599e7e
+
+
+https://github.com/user-attachments/assets/c3634799-a9e6-4f83-b514-399befb44396
+
 
 
 ---
