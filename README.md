@@ -58,7 +58,7 @@ cd /caminho/para/seu/projeto
 ```
  🔹 Execute o script:
   ```bash
-ruby marcar_aulas.rb
+ruby app.rb     
 ```
 
 🔹Quando solicitado, insira a URL principal do curso onde todos os módulos e aulas estão listados:
