@@ -38,10 +38,10 @@ bundle install
 ```
 🔹 O arquivo Gemfile contém as seguintes dependências:
 ```bash
-source 'https://rubygems.org'
-
+ruby '3.3.4'
 gem 'watir'
 gem 'selenium-webdriver'
+gem 'sinatra'
 ```
 🔹 Instale as dependências do projeto utilizando o Bundler:
 
