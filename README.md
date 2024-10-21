@@ -75,7 +75,7 @@ https://github.com/user-attachments/assets/8314c0a1-8cf4-4f4a-a342-867ce0599e7e
 
 ---
 
-### Exemplo de Execução
+### Exemplo de Execução (modo texto)
 
  ```bash
 $ ruby marcar_aulas.rb
