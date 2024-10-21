@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automação de Aulas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.min.css">
+  <style>
+    .navbar-brand img {
+      margin-right: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .navbar-brand img:hover {
+      transform: scale(1.1);
+    }
+
+    .navbar-title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .navbar {
+      border-bottom: 0.1px solid #555;
+    }
+
+    .main-content {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 80vh;
+      margin-top: 30px;
+    }
+
+    .card {
+      max-width: 450px;
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: box-shadow 0.3s ease, border 0.3s ease;
+      border: 2px solid #6c757d;
+    }
+
+    .card:hover {
+      border-color: red;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .card img {
+      border-radius: 15px;
+    }
+
+    .form-label {
+      margin-top: 10px;
+    }
+
+    .form-control {
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: #66afe9;
+      box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+    }
+
+    .form-control.changed {
+      border-color: #28a745 !important;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .btn-primary {
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      padding: 8px 10px;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .footer-image-wrapper {
+      position: relative;
+      flex: 1;
+      height: 85px;
+      margin-right: 10px;
+      overflow: hidden;
+    }
+
+    .footer-image {
+      position: absolute;
+      right: -100%;
+      height: 80px;
+      animation: slide 30s linear infinite;
+    }
+
+    @keyframes slide {
+      0% {
+        right: -100%;
+      }
+      100% {
+        right: 100%;
+      }
+    }
+
+    .footer-message {
+      text-align: left;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body class="bg-dark text-light">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 position-relative">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="/images/icon.png" alt="Ícone" width="150" height="30" class="d-inline-block align-text-top">
+      </a>
+      <span class="navbar-title">Automação de Conclusão de Aulas - OneBitCode</span>
+    </div>
+  </nav>
+
+  <div class="container main-content d-flex justify-content-center align-items-center">
+    <div class="card bg-secondary text-light shadow-lg p-4">
+      <div class="text-center mb-4">
+        <img src="/images/image.png" alt="Automação de Conclusão de Aulas" class="img-fluid">
+      </div>
+
+      <form action="/concluir_aulas" method="post">
+        <div class="mb-3">
+          <label for="curso_url" class="form-label">Digite a URL do curso principal:</label>
+          <input type="text" class="form-control" name="curso_url" id="curso_url" placeholder="https://example.com/curso-url" required onblur="markAsChanged()">
+        </div>
+
+        <button type="submit" class="btn btn-danger w-100">Iniciar Automação</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-message">Automação de Aulas - Powered by AAFS</span>
+
+    <div class="footer-image-wrapper">
+      <img src="/images/footer_image.png" alt="Imagem animada" class="footer-image">
+    </div>
+
+    <span id="dataHora"></span>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function atualizarDataHora() {
+      const now = new Date();
+      const dataHora = now.toLocaleString('pt-BR', {
+        dateStyle: 'short', 
+        timeStyle: 'medium'
+      });
+      document.getElementById('dataHora').textContent = dataHora;
+    }
+
+    setInterval(atualizarDataHora, 1000);
+  </script>
+
+  <script>
+    function markAsChanged() {
+      const input = document.getElementById('curso_url');
+      if (input.value !== '') {
+        input.classList.add('changed');
+      }
+    }
+  </script>
+</body>
+</html>
